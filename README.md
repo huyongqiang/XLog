@@ -4,7 +4,19 @@
 #### 引入项目
 
 ```
- implementation 'com.github.devzwy:XLog:1.0.0'
+
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+
+```
+```
+ dependencies {
+	        implementation 'com.github.devzwy:XLog:Tag'
+	}
 ```
 
 #### 效果 
