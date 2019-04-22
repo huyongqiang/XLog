@@ -18,7 +18,7 @@ allprojects {
 ```
 ```
  dependencies {
-	        implementation 'com.github.devzwy:XLog:[更换最新版本号]'
+	        implementation 'com.github.devzwy:XLog:[更换最新版本图片后面的数字]'
 	}
 ```
 
