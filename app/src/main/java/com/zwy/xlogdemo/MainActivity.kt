@@ -1,22 +1,16 @@
-# XLog
-优雅的日志，让你看日志不再眼花。哪里有bug点哪里，so easy.
+package com.zwy.xlogdemo
 
-#### 引入项目
+import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import com.zwy.xlog.XLog
+import com.zwy.xlog.XUtils
 
-```
-aaaaa
-```
+class MainActivity : AppCompatActivity() {
 
-#### 效果 
-
-![log1](https://github.com/devzwy/XLog/blob/master/image/log1.png)  
-![log2](https://github.com/devzwy/XLog/blob/master/image/log2.png)    
-
-
-#### 使用
-
-```kotlin
-     val str =
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        val str =
             "  {\"key\":\"sjkhuwebewbklsiuqww\",\"userName\":\"张三\",\"list\":[{\"a\":123,\"b\":true},{\"a\":44444,\"b\":false}] }     "
         //开启日志写入文件功能 参数默认值：logFileDirPath_ : XUtils.getSDCardPathByEnvironment() + "/XLog/ fileMaxCapacity:5M
 //        XLog.openLog2File()
@@ -40,5 +34,5 @@ aaaaa
         XLog.e("自定义标签", "11111111", Throwable("异常"))
         XLog.d("ResponseStr", str)
 
-```
-
+    }
+}
