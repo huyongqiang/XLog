@@ -1,6 +1,9 @@
 # XLog
 优雅的日志，自动检测并格式化json数据，让你看日志不再眼花。哪里有bug点哪里，so easy.
 
+####最新版本  
+
+[![](https://jitpack.io/v/devzwy/XLog.svg)](https://jitpack.io/#devzwy/XLog)
 #### 引入项目
 
 ```
@@ -15,7 +18,7 @@ allprojects {
 ```
 ```
  dependencies {
-	        implementation 'com.github.devzwy:XLog:Tag'
+	        implementation 'com.github.devzwy:XLog:[更换最新版本号]'
 	}
 ```
 
