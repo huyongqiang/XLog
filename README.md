@@ -4,7 +4,7 @@
 #### 引入项目
 
 ```
-aaaaa
+ implementation 'com.github.devzwy:XLog:1.0.0'
 ```
 
 #### 效果 
