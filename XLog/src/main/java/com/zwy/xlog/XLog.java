@@ -28,7 +28,7 @@ public class XLog {
     private static SimpleDateFormat format_dir;
     private static String finalLogPath;
     private static Long fileMaxCapacity = 5L * 1024 * 1024;//单个文件超过该大小时重新创建
-
+    private static boolean isEnableLog = true; //是否开启日志输出 默认开启
 
     static {
         format_dir = new SimpleDateFormat("yyyy-MM-dd");
@@ -44,6 +44,12 @@ public class XLog {
 
     //==================================================外部调用==================================================
 
+    /**
+     * 是否开启日志输出  默认开启 关闭时传入false
+     */
+    public static void setIsEnableLog(boolean isEnableLog) {
+        XLog.isEnableLog = isEnableLog;
+    }
 
     /**
      * 开启日志写入文件功能(每一行日志都会写入)
@@ -104,11 +110,13 @@ public class XLog {
     }
 
     public static void d(String logMsg) {
+        if (!isEnableLog)return;
         printer.json(logMsg);
         if (isInerLogToFile) addLogToFile(logMsg, 4, "Debug");
     }
 
     public static void d(String tag, String logMsg) {
+        if (!isEnableLog)return;
         if (tag != null && tag.length() > 0) {
             printer.t(tag).json(logMsg);
         } else {
@@ -146,6 +154,7 @@ public class XLog {
 
 
     public static void w(String tag, String logMsg) {
+        if (!isEnableLog)return;
         if (tag != null && tag.length() > 0) {
             printer.t(tag).e(logMsg);
         } else {
@@ -155,16 +164,19 @@ public class XLog {
     }
 
     public static void w(String logMsg) {
+        if (!isEnableLog)return;
         printer.w(logMsg);
         if (isInerLogToFile) addLogToFile(logMsg, 4, "Warn");
     }
 
     public static void i(String logMsg) {
+        if (!isEnableLog)return;
         printer.i(logMsg);
         if (isInerLogToFile) addLogToFile(logMsg, 4, "Info");
     }
 
     public static void i(String tag, String logMsg) {
+        if (!isEnableLog)return;
         if (tag != null && tag.length() > 0) {
             printer.t(tag).i(logMsg);
         } else {
@@ -193,6 +205,7 @@ public class XLog {
     }
 
     private static void pe(String tag, String errorMsg, Throwable throwable) {
+        if (!isEnableLog)return;
         if (tag != null && tag.length() > 0) {
             printer.t(tag).e(errorMsg);
         } else {

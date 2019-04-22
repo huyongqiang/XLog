@@ -31,6 +31,8 @@ allprojects {
 #### 使用
 
 ```kotlin
+        //关闭日志输出  默认开启
+//        XLog.setIsEnableLog(false)
      val str =
             "  {\"key\":\"sjkhuwebewbklsiuqww\",\"userName\":\"张三\",\"list\":[{\"a\":123,\"b\":true},{\"a\":44444,\"b\":false}] }     "
         //开启日志写入文件功能 参数默认值：logFileDirPath_ : XUtils.getSDCardPathByEnvironment() + "/XLog/ fileMaxCapacity:5M

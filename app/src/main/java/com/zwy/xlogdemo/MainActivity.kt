@@ -10,6 +10,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //关闭日志输出
+//        XLog.setIsEnableLog(false)
         val str =
             "  {\"key\":\"sjkhuwebewbklsiuqww\",\"userName\":\"张三\",\"list\":[{\"a\":123,\"b\":true},{\"a\":44444,\"b\":false}] }     "
         //开启日志写入文件功能 参数默认值：logFileDirPath_ : XUtils.getSDCardPathByEnvironment() + "/XLog/ fileMaxCapacity:5M
@@ -35,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         XLog.d("ResponseStr", str)
 
         //清除所有日志文件
-        XLog.clearLogFiles()
+//        XLog.clearLogFiles()
 
     }
 }
