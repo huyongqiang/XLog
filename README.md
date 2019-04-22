@@ -25,6 +25,7 @@ allprojects {
 ![log2](https://github.com/devzwy/XLog/blob/master/image/log2.png)  
 ![log3](https://github.com/devzwy/XLog/blob/master/image/log3.png)   
 ![log4](https://github.com/devzwy/XLog/blob/master/image/log4.png)      
+![log5](https://github.com/devzwy/XLog/blob/master/image/log5.png)      
 
 
 #### 使用
