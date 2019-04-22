@@ -10,7 +10,9 @@ aaaaa
 #### 效果 
 
 ![log1](https://github.com/devzwy/XLog/blob/master/image/log1.png)  
-![log2](https://github.com/devzwy/XLog/blob/master/image/log2.png)    
+![log2](https://github.com/devzwy/XLog/blob/master/image/log2.png)  
+![log3](https://github.com/devzwy/XLog/blob/master/image/log3.png)   
+![log4](https://github.com/devzwy/XLog/blob/master/image/log4.png)      
 
 
 #### 使用
@@ -39,6 +41,10 @@ aaaaa
         XLog.e(Throwable("异常"))
         XLog.e("自定义标签", "11111111", Throwable("异常"))
         XLog.d("ResponseStr", str)
+        
+        
+        //清除所有日志文件
+       // XLog.clearLogFiles()
 
 ```
 

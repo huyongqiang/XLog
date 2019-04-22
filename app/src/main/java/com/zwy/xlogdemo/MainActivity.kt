@@ -34,5 +34,8 @@ class MainActivity : AppCompatActivity() {
         XLog.e("自定义标签", "11111111", Throwable("异常"))
         XLog.d("ResponseStr", str)
 
+        //清除所有日志文件
+        XLog.clearLogFiles()
+
     }
 }
