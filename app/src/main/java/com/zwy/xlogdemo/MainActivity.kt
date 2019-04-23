@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.zwy.xlog.XLog
 import com.zwy.xlog.XUtils
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,5 +40,8 @@ class MainActivity : AppCompatActivity() {
         //清除所有日志文件
 //        XLog.clearLogFiles()
 
+        bt_.setOnClickListener {
+            XLog.d("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+        }
     }
 }

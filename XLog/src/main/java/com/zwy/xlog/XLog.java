@@ -110,13 +110,13 @@ public class XLog {
     }
 
     public static void d(String logMsg) {
-        if (!isEnableLog)return;
+        if (!isEnableLog) return;
         printer.json(logMsg);
         if (isInerLogToFile) addLogToFile(logMsg, 4, "Debug");
     }
 
     public static void d(String tag, String logMsg) {
-        if (!isEnableLog)return;
+        if (!isEnableLog) return;
         if (tag != null && tag.length() > 0) {
             printer.t(tag).json(logMsg);
         } else {
@@ -154,7 +154,7 @@ public class XLog {
 
 
     public static void w(String tag, String logMsg) {
-        if (!isEnableLog)return;
+        if (!isEnableLog) return;
         if (tag != null && tag.length() > 0) {
             printer.t(tag).e(logMsg);
         } else {
@@ -164,19 +164,19 @@ public class XLog {
     }
 
     public static void w(String logMsg) {
-        if (!isEnableLog)return;
+        if (!isEnableLog) return;
         printer.w(logMsg);
         if (isInerLogToFile) addLogToFile(logMsg, 4, "Warn");
     }
 
     public static void i(String logMsg) {
-        if (!isEnableLog)return;
+        if (!isEnableLog) return;
         printer.i(logMsg);
         if (isInerLogToFile) addLogToFile(logMsg, 4, "Info");
     }
 
     public static void i(String tag, String logMsg) {
-        if (!isEnableLog)return;
+        if (!isEnableLog) return;
         if (tag != null && tag.length() > 0) {
             printer.t(tag).i(logMsg);
         } else {
@@ -205,7 +205,7 @@ public class XLog {
     }
 
     private static void pe(String tag, String errorMsg, Throwable throwable) {
-        if (!isEnableLog)return;
+        if (!isEnableLog) return;
         if (tag != null && tag.length() > 0) {
             printer.t(tag).e(errorMsg);
         } else {
@@ -230,15 +230,11 @@ public class XLog {
 
         String stringBuffer_log = "【" + logType + "】 " + format.format(new Date()) + " " + stackTraceBuilder + " " +
                 logMsg + "\n";
-        if (new File(finalLogPath).length() > fileMaxCapacity) {
-            File f = createDir();
-            if (f == null) {
-                Log.e(tag, "日志写入失败，创建文件或文件夹失败");
-                return;
-            }
-            finalLogPath = f.getPath();
+        File finalFile = new File(finalLogPath);
+        if (!finalFile.exists() || finalFile.length() > fileMaxCapacity) {
+            finalFile =  createDir();
         }
-        XUtils.input2File(stringBuffer_log, finalLogPath, new InsertLogMsgListener() {
+        XUtils.input2File(stringBuffer_log, finalFile.getPath(), new InsertLogMsgListener() {
             @Override
             public void onSucc() {
             }
